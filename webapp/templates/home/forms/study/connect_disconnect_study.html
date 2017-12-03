@@ -1,0 +1,7 @@
+{% if study.is_connected == False %}
+    {{ render_hidden(connect_study_form.id, study.id) }}
+    {{ render_submit(connect_study_form.connect, "btn btn-success btn-sm") }}
+{% else %}
+    {{ render_hidden(connect_study_form.id, study.id) }}
+    {{ render_submit(connect_study_form.disconnect, "btn btn-success btn-sm") }}
+{% endif %}

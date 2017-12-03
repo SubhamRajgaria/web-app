@@ -1,0 +1,29 @@
+{% macro render_submit(field, class_str="btn btn-default") %}
+    {{ field(class=class_str) }}
+{% endmacro %}
+
+{% macro render_hidden(field, field_value="") %}
+    {{ field(value=field_value) }}
+{% endmacro %}
+
+
+{% macro render_field(field, field_value="") %}
+    {% if field.errors %}
+        <div class="form-group has-error has-feedback">
+            {{ field.label }}
+            {{ field(class="form-control",value=field_value) }}
+            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+        <div class="alert alert-danger">
+            {% for error in field.errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="form-group">
+            {{ field.label }}
+            {{ field(class="form-control",value=field_value) }}
+        </div>
+    {% endif %}
+{% endmacro %}
+

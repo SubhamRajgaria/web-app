@@ -1,0 +1,43 @@
+<div class="modal fade modal" id="new_study_modal_form" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{ _('Register a new study') }}</h4>
+            </div>
+            <div class="modal-body">
+                <form method=post>
+                    <div class="container-fluid">
+                        <div class="row">
+                            {{ render_hidden(new_study_form.id) }}
+                            {{ render_field(new_study_form.name) }}
+                            {{ render_field(new_study_form.description) }}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>{{ _('User database') }}</h3>
+                                <p>{{ _('The Users Database must be an instance of myslq/mariadb') }}</p>
+                                {{ render_field(new_study_form.user_db_host) }}
+                                {{ render_field(new_study_form.user_db_port) }}
+                                {{ render_field(new_study_form.user_db_name) }}
+                                {{ render_field(new_study_form.user_db_user) }}
+                                {{ render_field(new_study_form.user_db_password) }}
+                            </div>
+                            <div class="col-md-6">
+                                <h3>{{ _('Tweets database') }}</h3>
+                                <p>{{ _('The Tweets Database must be an instance of mongoDB') }}</p>
+                                {{ render_field(new_study_form.tweets_db_host) }}
+                                {{ render_field(new_study_form.tweets_db_port) }}
+                                {{ render_field(new_study_form.tweets_db_name) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        {{ render_submit(new_study_form.register, "btn btn-default btn-success") }}
+                        <button type="button" class="btn btn-default btn-warning" data-dismiss="modal">{{  _('Close') }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

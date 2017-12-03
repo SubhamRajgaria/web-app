@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+{% from "home/forms/_formhelpers.html" import render_submit,render_field,render_hidden %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <p style="margin:20px">
+                {{ _('This web application helps users visualize and analyse data obtained from the twitter api.
+                    It enables us to selectively choose users from the database and extract their Tweets.
+                    Users can be filtered by location, followers count, no of retweets , name, etc
+                    It has additional features such as viewing statistics and maps. The main purpose though is to get
+                    tweets from the user.
+                    The tweets obtained can be exported in various formats such as xml, json and txt
+                    One can work with the existing databases or can start with a new database.
+                    If one wants you can also download the study file and deploy the database in your local
+                    machine') }}
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="bg-info">
+                        <tr>
+                            <th>{{ _('Quick Links') }}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="#">{{ _('View Documentation') }}</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">{{ _('View Methodology') }}</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="panel-group">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            {{ _('Existing studies') }}
+                            <button type="button" class="btn btn-success btn-sm pull-right"
+                                    data-toggle="modal" data-target="#new_study_modal_form">
+                                <span class="glyphicon glyphicon-plus"></span>
+                                {{ _('Add') }}
+                            </button>
+                        </div>
+                        {% include("home/forms/study/new_study.html") %}
+                        <div class="panel-body">
+                            {% if studies|length > 0 %}
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead class="bg-info">
+                                        <tr>
+                                            <th>{{ _('Name') }}</th>
+                                            <th>{{ _('Description') }}</th>
+                                            <th>{{ _('Status') }}</th>
+                                            <th>{{ _('Actions') }}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for study in studies %}
+                                            {% include("home/forms/study/update_study.html") %}
+                                            {% include("home/forms/study/delete_study.html") %}
+                                            <tr>
+                                                <td class='clickable-row'
+                                                    data-href='{{ url_for('users.users_list', database_name = study.name, page = 1, number = 10) }}'
+                                                    role="button">{{ study.name }}
+                                                </td>
+                                                <td class='clickable-row'
+                                                    data-href='{{ url_for('users.users_list', database_name = study.name, page = 1, number = 10) }}'
+                                                    role="button">
+                                                    {{ study.description }}
+                                                </td>
+                                                <td>
+                                                    {% if study.is_connected == True %}
+                                                        <p>Connected</p>
+                                                    {% else %}
+                                                        <p>Disconnected</p>
+                                                    {% endif %}
+                                                </td>
+                                                <td width="30%" align="center">
+                                                    <form method=post>
+                                                        <button type="button" class="btn btn-success btn-sm"
+                                                                data-toggle="modal"
+                                                                data-target="#update_study_modal_form">
+                                                            <span class="glyphicon glyphicon-pencil"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-danger btn-sm"
+                                                                data-toggle="modal"
+                                                                data-target="#remove_study_modal_form">
+                                                            <span class="glyphicon glyphicon-remove-sign"></span>
+                                                        </button>
+                                                        {% include("home/forms/study/connect_disconnect_study.html") %}
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% else %}
+                                <p>{{ _('No database yet, you can register a new one by clicking the "Add" button.') }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            {{ _('Existing configurations') }}
+                            <a href="{{ url_for('configuration.general_configuration') }}">
+                                <button type="button" class="btn btn-success btn-sm pull-right">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    {{ _('Add') }}
+                                </button>
+                            </a>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="bg-info">
+                                    <tr>
+                                        <th>{{ _('Name') }}</th>
+                                        <th>{{ _('Created on') }}</th>
+                                        <th>{{ _('Actions') }}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>La Rochelle</td>
+                                        <td>22/05/2017</td>
+                                        <td width="21%" align="center">
+                                            <button type="button" class="btn btn-success btn-sm">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-info btn-sm">
+                                                <span class="glyphicon glyphicon-refresh"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <span class="glyphicon glyphicon-off"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <span class="glyphicon glyphicon-remove-sign"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

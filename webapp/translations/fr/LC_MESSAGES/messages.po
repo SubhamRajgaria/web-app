@@ -1,0 +1,564 @@
+# French translations for PROJECT.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+# Subham <subham.rajgaria@yahoo.com>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-06-13 11:17+0200\n"
+"PO-Revision-Date: 2017-06-13 11:18+0200\n"
+"Last-Translator: Subham <subham.rajgaria@yahoo.com>\n"
+"Language-Team: English <subham.rajgaria@yahoo.com>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.4.0\n"
+"X-Generator: Poedit 1.8.12\n"
+
+#: ../templates/index.html:6
+msgid "Twitter Database API"
+msgstr ""
+
+#: ../templates/index.html:8
+msgid ""
+"This web application helps users visualize and analyse data obtained from "
+"the twitter api.\n"
+"                    It enables us to selectively choose users <br> from the "
+"database and extract their Tweets.\n"
+"                    Users can be filtered by location, followers count, no "
+"of retweets , name, etc<br>\n"
+"                    It has additional features such as viewing statistics "
+"and maps. The main purpose though is to get\n"
+"                    tweets from the user.\n"
+"                    The tweets <br> obtained can be exported in various "
+"formats such as xml, json and txt\n"
+"                    One can work with the existing databases or can start "
+"with a <br>new database.\n"
+"                    If one wants you can also download the configuration "
+"file and deploy the database in your local\n"
+"                    machine<br>"
+msgstr ""
+
+#: ../templates/index.html:26
+msgid "Quick Links"
+msgstr ""
+
+#: ../templates/index.html:31
+msgid "View Documentation"
+msgstr ""
+
+#: ../templates/index.html:34
+msgid "View Methodology"
+msgstr ""
+
+#: ../templates/index.html:44
+msgid "Existing Databases"
+msgstr ""
+
+#: ../templates/index.html:47 ../templates/index.html:87
+#: ../templates/tweets/list.html:40 ../templates/users/list.html:40
+#: ../templates/users/list.html:76 ../templates/users/list.html:112
+msgid "Add"
+msgstr ""
+
+#: ../templates/index.html:56 ../templates/index.html:96
+#: ../templates/tweets/list.html:291 ../templates/tweets/list.html:301
+#: ../templates/users/list.html:7 ../templates/users/list.html:371
+#: ../templates/users/list.html:467 ../templates/users/list.html:468
+#: ../templates/users/list.html:481 ../templates/users/list.html:482
+msgid "Name"
+msgstr ""
+
+#: ../templates/index.html:57
+msgid "Database name"
+msgstr ""
+
+#: ../templates/index.html:58 ../templates/index.html:97
+msgid "Created on"
+msgstr ""
+
+#: ../templates/index.html:59 ../templates/users/list.html:388
+msgid "Description"
+msgstr ""
+
+#: ../templates/index.html:77
+msgid ""
+"No database yet, you can register a new one by clicking the \"Add\" button."
+msgstr ""
+
+#: ../templates/index.html:83
+msgid "Existing studies"
+msgstr ""
+
+#: ../templates/index.html:98
+msgid "Actions"
+msgstr ""
+
+#: ../templates/general/configuration.html:13
+msgid "Enter twitter API access details"
+msgstr ""
+
+#: ../templates/general/configuration.html:16
+msgid "Consumer Key:"
+msgstr ""
+
+#: ../templates/general/configuration.html:22
+msgid "Consumer Secret:"
+msgstr ""
+
+#: ../templates/general/configuration.html:28
+msgid "Access Token:"
+msgstr ""
+
+#: ../templates/general/configuration.html:34
+msgid "Access Token Secret:"
+msgstr ""
+
+#: ../templates/general/configuration.html:42
+msgid "Enter Mongo DB database details"
+msgstr ""
+
+#: ../templates/general/configuration.html:45
+#: ../templates/general/configuration.html:70
+msgid "Host :"
+msgstr ""
+
+#: ../templates/general/configuration.html:51
+#: ../templates/general/configuration.html:76
+msgid "Port:"
+msgstr ""
+
+#: ../templates/general/configuration.html:57
+#: ../templates/general/configuration.html:82
+msgid "Database Name:"
+msgstr ""
+
+#: ../templates/general/configuration.html:67
+msgid "Enter MySQL database details"
+msgstr ""
+
+#: ../templates/general/configuration.html:88
+msgid "User Name:"
+msgstr ""
+
+#: ../templates/general/configuration.html:94
+msgid "Password:"
+msgstr ""
+
+#: ../templates/general/configuration.html:102
+msgid "User Categories"
+msgstr ""
+
+#: ../templates/general/configuration.html:106
+msgid "Category 1"
+msgstr ""
+
+#: ../templates/general/configuration.html:109
+msgid "Category 2"
+msgstr ""
+
+#: ../templates/general/configuration.html:112
+msgid "Add more categories"
+msgstr ""
+
+#: ../templates/general/configuration.html:116
+msgid "Log Details"
+msgstr ""
+
+#: ../templates/general/configuration.html:119
+msgid "Level:"
+msgstr ""
+
+#: ../templates/general/configuration.html:125
+msgid "Filename:"
+msgstr ""
+
+#: ../templates/general/configuration.html:137
+msgid "Download File"
+msgstr ""
+
+#: ../templates/general/configuration.html:139
+msgid "Start with this configuration"
+msgstr ""
+
+#: ../templates/tweets/export.html:5
+msgid "Export Tweets/Fields in format"
+msgstr ""
+
+#: ../templates/tweets/export.html:7
+msgid "In .txt"
+msgstr ""
+
+#: ../templates/tweets/export.html:10
+msgid "In .xml"
+msgstr ""
+
+#: ../templates/tweets/export.html:13
+msgid "In .json"
+msgstr ""
+
+#: ../templates/tweets/export.html:17 ../templates/tweets/export.html:37
+#: ../templates/tweets/export.html:63
+msgid "Cancel"
+msgstr ""
+
+#: ../templates/tweets/export.html:20 ../templates/tweets/export.html:40
+#: ../templates/tweets/export.html:66
+msgid "Confirm"
+msgstr ""
+
+#: ../templates/tweets/export.html:24
+msgid "OR"
+msgstr ""
+
+#: ../templates/tweets/export.html:25
+msgid "Export Tweets/Fields for :"
+msgstr ""
+
+#: ../templates/tweets/export.html:27
+msgid "Iramuteq"
+msgstr ""
+
+#: ../templates/tweets/export.html:30
+msgid "Excel"
+msgstr ""
+
+#: ../templates/tweets/export.html:33
+msgid "Other"
+msgstr ""
+
+#: ../templates/tweets/export.html:48
+msgid "Select the fields which are to be exported"
+msgstr ""
+
+#: ../templates/tweets/export.html:50
+msgid "Tweets' Text"
+msgstr ""
+
+#: ../templates/tweets/export.html:53 ../templates/tweets/list.html:260
+msgid "Number of Retweets"
+msgstr ""
+
+#: ../templates/tweets/export.html:56 ../templates/tweets/list.html:298
+#: ../templates/tweets/list.html:308
+msgid "Users"
+msgstr ""
+
+#: ../templates/tweets/export.html:59 ../templates/tweets/list.html:256
+#: ../templates/tweets/list.html:296 ../templates/tweets/list.html:306
+msgid "Coordinates"
+msgstr ""
+
+#: ../templates/tweets/list.html:5 ../templates/users/list.html:5
+msgid "Filters"
+msgstr ""
+
+#: ../templates/tweets/list.html:7 ../templates/tweets/list.html:294
+#: ../templates/tweets/list.html:304 ../templates/users/list.html:471
+#: ../templates/users/list.html:485
+msgid "Text"
+msgstr ""
+
+#: ../templates/tweets/list.html:15 ../templates/users/list.html:15
+#: ../templates/users/list.html:51 ../templates/users/list.html:87
+msgid "Dropdown Header 1"
+msgstr ""
+
+#: ../templates/tweets/list.html:16 ../templates/tweets/list.html:27
+#: ../templates/users/list.html:16 ../templates/users/list.html:27
+#: ../templates/users/list.html:52 ../templates/users/list.html:63
+#: ../templates/users/list.html:88 ../templates/users/list.html:99
+msgid "Include"
+msgstr ""
+
+#: ../templates/tweets/list.html:19 ../templates/tweets/list.html:30
+#: ../templates/users/list.html:19 ../templates/users/list.html:30
+#: ../templates/users/list.html:55 ../templates/users/list.html:66
+#: ../templates/users/list.html:91 ../templates/users/list.html:102
+#: ../templates/users/list.html:115
+msgid "Exclude"
+msgstr ""
+
+#: ../templates/tweets/list.html:22 ../templates/tweets/list.html:33
+#: ../templates/users/list.html:22 ../templates/users/list.html:33
+#: ../templates/users/list.html:58 ../templates/users/list.html:69
+#: ../templates/users/list.html:94 ../templates/users/list.html:105
+msgid "Delete"
+msgstr ""
+
+#: ../templates/tweets/list.html:26 ../templates/users/list.html:26
+#: ../templates/users/list.html:62 ../templates/users/list.html:98
+msgid "Dropdown Header 2"
+msgstr ""
+
+#: ../templates/tweets/list.html:43
+msgid "Dates"
+msgstr ""
+
+#: ../templates/tweets/list.html:47
+msgid "From"
+msgstr ""
+
+#: ../templates/tweets/list.html:56
+msgid "To"
+msgstr ""
+
+#: ../templates/tweets/list.html:76
+msgid "Past exclusions"
+msgstr ""
+
+#: ../templates/tweets/list.html:78 ../templates/users/list.html:122
+msgid "Result 1"
+msgstr ""
+
+#: ../templates/tweets/list.html:79 ../templates/users/list.html:123
+msgid "Result 2"
+msgstr ""
+
+#: ../templates/tweets/list.html:82 ../templates/users/list.html:126
+msgid "Exclude temporarily"
+msgstr ""
+
+#: ../templates/tweets/list.html:83 ../templates/users/list.html:127
+msgid "Exclude permanently"
+msgstr ""
+
+#: ../templates/tweets/list.html:84
+msgid "Refresh /Undo"
+msgstr ""
+
+#: ../templates/tweets/list.html:104 ../templates/users/list.html:148
+msgid "40%"
+msgstr ""
+
+#: ../templates/tweets/list.html:108
+msgid "Select All"
+msgstr ""
+
+#: ../templates/tweets/list.html:216
+msgid "Select Tweets"
+msgstr ""
+
+#: ../templates/tweets/list.html:220
+msgid "Show 2"
+msgstr ""
+
+#: ../templates/tweets/list.html:223
+msgid "Show 5"
+msgstr ""
+
+#: ../templates/tweets/list.html:226 ../templates/users/list.html:336
+msgid "Show 10"
+msgstr ""
+
+#: ../templates/tweets/list.html:232
+msgid "Tweets"
+msgstr ""
+
+#: ../templates/tweets/list.html:237
+msgid "User Name"
+msgstr ""
+
+#: ../templates/tweets/list.html:238 ../templates/users/list.html:372
+#: ../templates/users/list.html:469 ../templates/users/list.html:483
+msgid "User ID"
+msgstr ""
+
+#: ../templates/tweets/list.html:239
+msgid "Tweet ID"
+msgstr ""
+
+#: ../templates/tweets/list.html:240
+msgid "Tweet Text"
+msgstr ""
+
+#: ../templates/tweets/list.html:244
+msgid "Date of Publishing"
+msgstr ""
+
+#: ../templates/tweets/list.html:248
+msgid "Sort Old"
+msgstr ""
+
+#: ../templates/tweets/list.html:251
+msgid "Sort New"
+msgstr ""
+
+#: ../templates/tweets/list.html:264 ../templates/tweets/list.html:279
+#: ../templates/users/list.html:363 ../templates/users/list.html:380
+#: ../templates/users/list.html:396 ../templates/users/list.html:410
+#: ../templates/users/list.html:424 ../templates/users/list.html:439
+#: ../templates/users/list.html:454
+msgid "Sort Ascending"
+msgstr ""
+
+#: ../templates/tweets/list.html:267 ../templates/tweets/list.html:282
+#: ../templates/users/list.html:366 ../templates/users/list.html:383
+#: ../templates/users/list.html:399 ../templates/users/list.html:413
+#: ../templates/users/list.html:427 ../templates/users/list.html:442
+#: ../templates/users/list.html:457
+msgid "Sort Descending"
+msgstr ""
+
+#: ../templates/tweets/list.html:275
+msgid "Retweet Users"
+msgstr ""
+
+#: ../templates/tweets/list.html:292 ../templates/tweets/list.html:293
+#: ../templates/tweets/list.html:297 ../templates/tweets/list.html:302
+#: ../templates/tweets/list.html:303 ../templates/tweets/list.html:307
+#: ../templates/users/list.html:473 ../templates/users/list.html:474
+#: ../templates/users/list.html:475 ../templates/users/list.html:476
+#: ../templates/users/list.html:477 ../templates/users/list.html:487
+#: ../templates/users/list.html:488 ../templates/users/list.html:489
+#: ../templates/users/list.html:490 ../templates/users/list.html:491
+msgid "Number"
+msgstr ""
+
+#: ../templates/tweets/list.html:295 ../templates/tweets/list.html:305
+#: ../templates/users/list.html:472 ../templates/users/list.html:486
+msgid "Date"
+msgstr ""
+
+#: ../templates/tweets/list.html:315
+msgid "Export Tweets"
+msgstr ""
+
+#: ../templates/tweets/list.html:317 ../templates/users/list.html:502
+msgid "Show Map"
+msgstr ""
+
+#: ../templates/tweets/list.html:326 ../templates/users/list.html:555
+msgid "Map"
+msgstr ""
+
+#: ../templates/users/list.html:43
+msgid "Screen_Name"
+msgstr ""
+
+#: ../templates/users/list.html:120
+msgid "Past Exclusions"
+msgstr ""
+
+#: ../templates/users/list.html:128
+msgid "Refresh/Undo"
+msgstr ""
+
+#: ../templates/users/list.html:331
+msgid ""
+"Select\n"
+"                            number of Users"
+msgstr ""
+
+#: ../templates/users/list.html:339
+msgid "Show 20"
+msgstr ""
+
+#: ../templates/users/list.html:342
+msgid "Show 50"
+msgstr ""
+
+#: ../templates/users/list.html:345
+msgid "Show 100"
+msgstr ""
+
+#: ../templates/users/list.html:351
+msgid "Twitter Users"
+msgstr ""
+
+#: ../templates/users/list.html:359
+msgid "Screen Name"
+msgstr ""
+
+#: ../templates/users/list.html:376
+msgid "Location"
+msgstr ""
+
+#: ../templates/users/list.html:389
+msgid "Recent Tweets' Dates"
+msgstr ""
+
+#: ../templates/users/list.html:392
+msgid "No. of followers"
+msgstr ""
+
+#: ../templates/users/list.html:406
+msgid "No. of friends"
+msgstr ""
+
+#: ../templates/users/list.html:420
+msgid "No. of tweets"
+msgstr ""
+
+#: ../templates/users/list.html:435
+msgid "Retweets of User"
+msgstr ""
+
+#: ../templates/users/list.html:450
+msgid "Retweets by User"
+msgstr ""
+
+#: ../templates/users/list.html:462
+msgid "isActive"
+msgstr ""
+
+#: ../templates/users/list.html:470 ../templates/users/list.html:484
+msgid "Place"
+msgstr ""
+
+#: ../templates/users/list.html:478 ../templates/users/list.html:492
+msgid "Boolean"
+msgstr ""
+
+#: ../templates/users/list.html:499
+msgid "Get Tweets"
+msgstr ""
+
+#: ../templates/users/list.html:501
+msgid "Show Stats"
+msgstr ""
+
+#: ../templates/users/list.html:503
+msgid "Generate User Preview"
+msgstr ""
+
+#: ../templates/users/list.html:504
+msgid "Export User Graph"
+msgstr ""
+
+#: ../templates/users/list.html:517
+msgid "Statistics"
+msgstr ""
+
+#: ../templates/users/list.html:523
+msgid "Total number of Users:"
+msgstr ""
+
+#: ../templates/users/list.html:527
+msgid "Average number of Users:"
+msgstr ""
+
+#: ../templates/users/list.html:531
+msgid "Total number of Tweets:"
+msgstr ""
+
+#: ../templates/users/list.html:535
+msgid "Average number of tweets per person:"
+msgstr ""
+
+#: ../templates/users/list.html:539
+msgid "Average number of retweets per tweet:"
+msgstr ""
+
+#: ../templates/users/list.html:543
+msgid "Average number of friends per user:"
+msgstr ""
+
+#: ../templates/users/list.html:547
+msgid "Average number of followers per user:"
+msgstr ""

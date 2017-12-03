@@ -1,0 +1,134 @@
+{% if page==1 %}
+    <ul class="nav navbar-nav navbar-right">
+        <li><label>Page No.</label></li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=1,
+                                        number =number) }}'>
+                <button class="btn btn-primary active">1</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=2,
+                                number =number ) }}'>
+                <button class="btn btn-primary">2</button></a>
+        </li>
+        <li><a href="#"><button class="btn btn-primary diabled">...</button></a></li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=length,
+                                number =number ) }}'>
+                <button class="btn btn-primary">{{length}}</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=2,
+                                number =number ) }}'>
+                <button class="btn btn-primary">Next</button></a>
+        </li>
+    </ul>
+{% elif page==2%}
+    <ul class="nav navbar-nav navbar-right">
+        <li><label>Page No.</label></li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page - 1 , number =number) }}'>
+                <button class="btn btn-primary">Previous</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=1, number =number) }}'>
+                <button class="btn btn-primary">1</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=2, number =number) }}'>
+                <button class="btn btn-primary active">2</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=3, number =number) }}'>
+                <button class="btn btn-primary">3</button></a>
+        </li>
+        <li><a href="#"><button class="btn btn-primary diabled">...</button></a></li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=length, number =number) }}'>
+                <button class="btn btn-primary">{{length}}</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=3, number =number) }}'>
+                <button class="btn btn-primary">Next</button></a>
+        </li>
+    </ul>
+{% elif page == length - 1 %}
+    <ul class="nav navbar-nav navbar-right">
+        <li><label>Page No.</label></li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page - 1 , number =number) }}'>
+                <button class="btn btn-primary">Previous</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=1, number =number) }}'>
+                <button class="btn btn-primary">1</button></a>
+        </li>
+        <li><a href="#"><button class="btn btn-primary diabled">...</button></a></li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page - 1, number =number) }}'>
+                <button class="btn btn-primary">{{ page - 1 }}</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page, number =number) }}'>
+                <button class="btn btn-primary active">{{ page }}</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page + 1, number =number) }}'>
+                <button class="btn btn-primary">{{ page + 1 }}</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page + 1, number =number) }}'>
+                <button class="btn btn-primary">Next</button></a>
+        </li>
+    </ul>
+{% elif page==length %}
+    <ul class="nav navbar-nav navbar-right">
+        <li><label>Page No.</label></li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page - 1 , number =number) }}'>
+                <button class="btn btn-primary">Previous</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=1, number =number) }}'>
+                <button class="btn btn-primary">1</button></a>
+        </li>
+        <li><a href="#"><button class="btn btn-primary diabled">...</button></a></li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page - 1, number =number) }}'>
+                <button class="btn btn-primary">{{ page - 1 }}</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page, number =number) }}'>
+                <button class="btn btn-primary active">{{ page }}</button></a>
+        </li>
+    </ul>
+{% else %}
+    <ul class="nav navbar-nav navbar-right">
+        <li><label>Page No.</label></li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page - 1 , number =number) }}'>
+                <button class="btn btn-primary">Previous</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page - 1 , number =number) }}'>
+                <button class="btn btn-primary">{{ page - 1 }}</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page, number =number) }}'>
+                <button class="btn btn-primary active">{{ page }}</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page + 1 , number =number) }}'>
+                <button class="btn btn-primary">{{ page + 1 }}</button></a>
+        </li>
+        <li><a href="#"><button class="btn btn-primary diabled">...</button></a></li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page=length, number =number) }}'>
+                <button class="btn btn-primary">{{length}}</button></a>
+        </li>
+        <li>
+            <a href='{{ url_for('users.users_list', database_name = database_name, page= page + 1, number =number) }}'>
+                <button class="btn btn-primary">Next</button></a>
+        </li>
+    </ul>
+{% endif %}

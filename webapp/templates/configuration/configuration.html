@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <nav class="col-sm-offset-9">
+            <div class="btn-group" data-spy="affix" data-offset-top="0">
+                <button type="button" class="btn btn-success">Download File</button>
+                <a href="{{ url_for('home.index') }}">
+                    <button type="button" class="btn btn-danger">Start with this configuration</button>
+                </a>
+            </div>
+        </nav>
+        <div class="col-sm-6">
+            <h3>{{  _('Enter twitter API access details')}}</h3>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="key">{{  _('Consumer Key:')}}</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="key" placeholder="Enter consumer key">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="pwd">{{  _('Consumer Secret:')}}</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter consumer secret">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="token">{{  _('Access Token:')}}</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="token" placeholder="Enter access token">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="pwd">{{  _('Access Token Secret:')}}</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter access secret">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <h3> {{  _('Enter Mongo DB database details')}}</h3>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="host">{{ _('Host :') }}</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="host" placeholder="localhost">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="port">{{ _('Port:') }}</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="port" placeholder="3306">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">{{ _('Database Name:') }}</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="name" placeholder="">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>{{ _('Enter MySQL database details') }}</h3>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="host">{{ _('Host :') }}</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="host" placeholder="localhost">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="port">{{ _('Port:') }}</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="port" placeholder="3306">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">{{ _('Database Name:') }}</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="name" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="user">{{ _('User Name:') }}</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="user" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="pwd">{{ _('Password:') }}</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <h3>{{ _('User Categories') }}</h3>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">{{ _('Category 1') }}</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">{{ _('Category 2') }}</label>
+                    </div>
+                    <div class="col-sm-offset-2">
+                        <button type="button" class="btn btn-info">{{ _('Add more categories') }}</button>
+                    </div>
+                </div>
+            </form>
+            <h3>{{ _('Log Details') }}</h3>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="token">{{ _('Level:') }}</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="token" placeholder="Enter details">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="file">{{ _('Filename:') }}</label>
+                    <div class="col-sm-4">
+                        <input type="file" class="form-control" id="file" placeholder="Enter details">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-offset-5">
+        <div class="btn-group">
+            <button type="button" class="btn btn-success">{{ _('Download File') }}</button>
+            <a href="{{ url_for('home.index') }}">
+            <button type="button" class="btn btn-danger">{{ _('Start with this configuration') }}</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}

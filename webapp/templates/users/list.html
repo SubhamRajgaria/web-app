@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+{% from "home/forms/_formhelpers.html" import render_submit,render_field,render_hidden %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-2">
+            <h3>{{_('Filters')}}</h3>
+            {% include("users/filter.html")  %}
+        </div>
+        <div class="col-md-10">
+            <div class="table-responsive">
+                <table id="myTable" class="table table-bordered">
+                    <thead class="bg-warning">
+                    {% include("users/choose_number_of_users_per_page.html") %}
+                    <div class="nav navbar-default navbar-nav">
+                        {% include "users/download.html" %}
+                        <button type="button" class="btn btn-success btn-md"
+                                data-toggle="modal"
+                                data-target="#download_user_tweets">
+                            <span class="glyphicon glyphicon-download-alt">Click to download tweets</span>
+                        </button>
+                    </div>
+                    {% include("users/pagination_numbers.html") %}
+
+                    <tr>
+                        <th><strong>{{ _('Screen_Name') }}</strong></th>
+                        <th><strong>{{ _('Name') }}</strong></th>
+                        <th><strong>{{ _('User ID') }}</strong></th>
+                        <th><strong>{{ _('Location') }}</strong></th>
+                        <th><strong>{{ _('Description') }}</strong></th>
+                        <th><strong>{{ _('Recent Tweets\' Dates') }}</strong></th>
+                        <th><strong>{{ _('No. of followers') }}</strong></th>
+                        <th><strong>{{ _('No. of friends') }}</strong></th>
+                        <th><strong>{{ _('No. of tweets') }}</strong></th>
+                        <th><strong>{{ _('Retweets of User') }}</strong></th>
+                        <th><strong>{{ _('Retweets by User') }}</strong></th>
+                        <th><strong>{{ _('isActive') }}</strong></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for profile in profiles %}
+                        {% if exc_temp %}
+                            {% if profile.user_id|string not in exc_temp %}
+                                <tr>
+                                    <td>{{ _(profile.screen_name) }}</td>
+                                    <td>{{ _(profile.name) }}</td>
+                                    <td>{{ _(profile.user_id) }}</td>
+                                    <td>{{ _(profile.location) }}</td>
+                                    <td>{{ profile.description }}</td>
+                                    <td>{{ _('Date') }}</td>
+                                    <td>{{ _(profile.followers_count) }}</td>
+                                    <td>{{ _(profile.friends_count) }}</td>
+                                    <td>{{ _('Number') }}</td>
+                                    <td>{{ _('Number') }}</td>
+                                    <td>{{ _('Number') }}</td>
+                                    <td>{{ _('Boolean') }}</td>
+                                </tr>
+                            {% endif %}
+                        {% else %}
+                            <tr>
+                                <td>{{ _(profile.screen_name) }}</td>
+                                <td>{{ _(profile.name) }}</td>
+                                <td>{{ _(profile.user_id) }}</td>
+                                <td>{{ _(profile.location) }}</td>
+                                <td>{{ profile.description }}</td>
+                                <td>{{ _('Date') }}</td>
+                                <td>{{ _(profile.followers_count) }}</td>
+                                <td>{{ _(profile.friends_count) }}</td>
+                                <td>{{ _('Number') }}</td>
+                                <td>{{ _('Number') }}</td>
+                                <td>{{ _('Number') }}</td>
+                                <td>{{ _('Boolean') }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="col-md-offset-4">
+                    <div class="btn-group">
+                        <a href="{{ url_for('tweets.tweets_list') }}">
+                            <button type="button" class="btn btn-success">{{ _('Get Tweets') }}</button>
+                        </a>
+                        <button type="button" class="btn btn-warning">{{ _('Show Stats') }}</button>
+                        <button type="button" class="btn btn-primary">{{ _('Show Map') }}</button>
+                        <button type="button" class="btn btn-danger">{{ _('Generate User Preview') }}</button>
+                        <button type="button" class="btn btn-info">{{ _('Export User Graph') }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="bg-primary">
+                    <tr>
+                        <th><strong>{{ _('Statistics') }}</strong></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>{{ _('Total number of Users:') }}</strong></td>
+                        <td>Number</td>
+                    </tr>
+                    <tr>
+                        <td><strong>{{ _('Average number of Users:') }}</strong></td>
+                        <td>Number</td>
+                    </tr>
+                    <tr>
+                        <td><strong>{{ _('Total number of Tweets:') }}</strong></td>
+                        <td>Number</td>
+                    </tr>
+                    <tr>
+                        <td><strong>{{ _('Average number of tweets per person:') }}</strong></td>
+                        <td>Number</td>
+                    </tr>
+                    <tr>
+                        <td><strong>{{ _('Average number of retweets per tweet:') }}</strong></td>
+                        <td>Number</td>
+                    </tr>
+                    <tr>
+                        <td><strong>{{ _('Average number of friends per user:') }}</strong></td>
+                        <td>Number</td>
+                    </tr>
+                    <tr>
+                        <td><strong>{{ _('Average number of followers per user:') }}</strong></td>
+                        <td>Number</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3 class="bg-primary">{{ _('Map') }}</h3>
+            <div id="googleMap" style="width:100%;height:400px;"></div>
+
+            <script>
+                function myMap() {
+                    var mapProp = {
+                        center: new google.maps.LatLng(46.1603, 1.1511),
+                        zoom: 5
+                    };
+                    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3SibSL9qOFuxEbO905Ddz3-ODLYv9v68&callback=myMap"></script>
+            <!--
+            To use this code on your website, get a free API key from Google.
+            Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+            -->
+        </div>
+    </div>
+{% endblock %}
