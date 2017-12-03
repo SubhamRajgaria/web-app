@@ -1,0 +1,29 @@
+{% from "home/forms/_formhelpers.html" import render_submit,render_field,render_hidden %}
+<div class="modal fade modal" id="download_user_tweets" role="dialog">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{ _('Download tweets of currently extracted users') }}</h4>
+            </div>
+            <div class="modal-body">
+                <form method=post>
+                    <div class="container-fluid">
+                        <div class="row">
+                            {{ render_hidden(download_form.id) }}
+                            {{ render_field(download_form.name) }}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <a href="{{ url_for('users.send_download_file', filename = "abc.txt") }}"><button type="button" class="btn btn-default btn-success">Confirm</button></a>
+                                <button type="button" class="btn btn-default btn-warning" data-dismiss="modal">{{  _('Close') }}</button>
+                            </div>
+                        </form>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

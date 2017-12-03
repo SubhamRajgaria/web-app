@@ -1,0 +1,56 @@
+{% from "home/forms/_formhelpers.html" import render_submit,render_field,render_field_2,render_hidden %}
+<form class="form-vertical" method="POST">
+    <div class="input-group" id="Name">
+        <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                    aria-expanded="false">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" id="list">
+                {% for name in filter.entries %}
+                    <li class="dropdown-header">{{ name }}
+                        {{ render_submit(filter.delete, "btn btn-default btn-danger disabled") }}
+                    </li>
+                    <li class="divider"></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {{ render_field(filter.name) }}
+        <span class="input-group-btn">
+                       {{ render_submit(filter.register, "btn btn-default btn-success") }}
+                        {{ render_submit(filter.unregister, "btn btn-default btn-warning") }}
+                        </span>
+    </div>
+    <h4>{{ _('Exclude') }}</h4>
+    <div class="input-group">
+        <div class="btn-toolbar">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-primary btn-md dropdown-toggle" data-toggle="dropdown"
+                    aria-expanded="false" id="past_exclusions">{{ _('Past Saved Searches') }}
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" id="filter_list">
+                    <form class="form-inline">
+                    {% for filters in past_filters %}
+                    <li>
+
+                            {{ filters.name }}
+
+                    </li>
+                    {% endfor %}
+                     </form>
+                </ul>
+            </div>
+            {{ render_field(save.findName) }}
+            {{ render_submit(save.exportSavedFilters, "btn btn-sm btn-info")  }}
+            {{ render_submit(save.removeAllFilters, "btn btn-sm btn-primary") }}
+            <p><br><br><br></p>
+            <span id="button">{{ render_submit(exclude.excludeTemporary, "btn btn-default btn-warning") }}</span>
+            <span id="button">{{ render_submit(exclude.excludePermanent, "btn btn-default btn-danger") }}</span>
+            <p><br><br><br><br></p>
+            <span id="name_input">{{ render_field(save.nameOfSearch) }}</span>
+            <span id="desc_input">{{ render_field(save.description) }}</span>
+            <span id="save_data">{{ render_submit(save.saveFilters, "btn btn-default btn-primary") }}</span>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,219 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-2">
+            <h3>{{ _('Filters') }}</h3>
+            <form class="form-vertical">
+                <h5>{{ _('Text') }}</h5>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-expanded="false">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">{{ _('Dropdown Header 1') }}
+                                <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-ok"></i>{{ _('Include') }}
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs"><i
+                                        class="glyphicon glyphicon-remove"></i>{{ _('Exclude') }}
+                                </button>
+                                <button type="button" class="btn btn-danger btn-xs"><i
+                                        class="glyphicon glyphicon-remove"></i>{{ _('Delete') }}
+                                </button>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">{{ _('Dropdown Header 2') }}
+                                <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-ok"></i>{{ _('Include') }}
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs"><i
+                                        class="glyphicon glyphicon-remove"></i>{{ _('Exclude') }}
+                                </button>
+                                <button type="button" class="btn btn-danger btn-xs"><i
+                                        class="glyphicon glyphicon-remove"></i>{{ _('Delete') }}
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="button">{{ _('Add') }}</button>
+                        </span>
+                </div>
+                <h5>{{ _('Dates') }}</h5>
+                <div class="container">
+                    <div class='col-sm-3'>
+                        <div class="form-group">
+                            <label for="datetimepicker1">{{ _('From') }}</label>
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control"/>
+                                <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="datetimepicker1">{{ _('To') }}</label>
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control"/>
+                                <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Exclude</h4>
+                <div class="input-group">
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary btn-md dropdown-toggle" data-toggle="dropdown">
+                                {{ _('Past exclusions') }} <span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                <li><a href="#">{{ _('Result 1') }}</a></li>
+                                <li><a href="#">{{ _('Result 2') }}</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn btn-warning btn-md">{{ _('Exclude temporarily') }}</button>
+                        <button type="button" class="btn btn-danger btn-md">{{ _('Exclude permanently') }}</button>
+                        <button type="button" class="btn btn-success btn-md">{{ _('Refresh /Undo') }}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-10">
+            <div class="col-md-5">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        {{ _('40%') }}
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">{{ _('Select All') }}</label>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{ _('Select Tweets') }}
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <button type="button" class="btn btn-default">{{ _('Show 2') }}</button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-default">{{ _('Show 5') }}</button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-default">{{ _('Show 10') }}</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h3 class="bg-info">{{ _('Tweets') }}</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="bg-info">
+                    <tr>
+                        <th>{{ _('User Name')}}</th>
+                        <th>{{ _('User ID')}}</th>
+                        <th>{{ _('Tweet ID')}}</th>
+                        <th>{{ _('Tweet Text')}}</th>
+                        <th>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                    {{ _('Date of Publishing')}}
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <button type="button" class="btn btn-default">{{ _('Sort Old')}}</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="btn btn-default">{{ _('Sort New')}}</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </th>
+                        <th>{{ _('Coordinates')}}</th>
+                        <th>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                    {{ _('Number of Retweets')}}
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <button type="button" class="btn btn-default">{{ _('Sort Ascending') }}</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="btn btn-default">{{ _('Sort Descending') }}</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                    {{ _('Retweet Users') }}
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <button type="button" class="btn btn-default">{{ _('Sort Ascending') }}</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="btn btn-default">{{ _('Sort Descending') }}</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ _('Name') }}</td>
+                        <td>{{ _('Number') }}</td>
+                        <td>{{ _('Number') }}</td>
+                        <td>{{ _('Text') }}</td>
+                        <td>{{ _('Date') }}</td>
+                        <td>{{ _('Coordinates') }}</td>
+                        <td>{{ _('Number') }}</td>
+                        <td>{{ _('Users') }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ _('Name') }}</td>
+                        <td>{{ _('Number') }}</td>
+                        <td>{{ _('Number') }}</td>
+                        <td>{{ _('Text') }}</td>
+                        <td>{{ _('Date') }}</td>
+                        <td>{{ _('Coordinates') }}</td>
+                        <td>{{ _('Number') }}</td>
+                        <td>{{ _('Users') }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="col-md-offset-8">
+                    <div class="btn-group">
+                        <a href="{{ url_for('tweets.tweets_export') }}">
+                            <button type="button" class="btn btn-success">{{ _('Export Tweets') }}</button>
+                        </a>
+                        <button type="button" class="btn btn-primary">{{ _('Show Map') }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="bg-primary">{{ _('Map') }}</h3>
+            <div id="googleMap" style="width:100%;height:400px;"></div>
+
+            <script>
+                function myMap() {
+                    var mapProp = {
+                        center: new google.maps.LatLng(46.1603, 1.1511),
+                        zoom: 5
+                    };
+                    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3SibSL9qOFuxEbO905Ddz3-ODLYv9v68&callback=myMap"></script>
+        </div>
+    </div>
+{% endblock %}

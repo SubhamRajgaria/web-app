@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        {#  WARNING : if you read this line, remember to check if the databable.min.js is at its current version #}
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="{{ url_for('static', filename='./js/jquery.dataTables.yadcf.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/bootstrap.css') }}">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/jquery.dataTables.yadcf.css') }}">
+        <script src="{{ url_for('static', filename='./js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='./js/custom.js') }}"></script>
+        <script src="{{ url_for('static', filename='./js/dataTable.js') }}"></script>
+        <title>{{ title }} - Twunet - View, filter, export</title>
+
+    {% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-default">
+    {% block nav %}
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://git2017.univ-lr.fr/twunet/web-app">Twunet</a>
+            </div>
+        </div>
+    {% endblock %}
+</nav>
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        {%- for breadcrumb in breadcrumbs -%}
+            <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a></li>
+        {%- endfor -%}
+    </ol>
+</div>
+
+<div class="container-fluid">
+    <div class="container">
+        {% for message in error_messages %}
+            <div class="alert alert-danger" role="alert">{{ message }}</div>
+        {% endfor %}
+        {% for message in info_messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% block content %}{% endblock %}
+</div>
+
+<div class="footer container-fluid">
+    {% block footer %}
+        &copy; Copyright 2017 by <a href="https://git2017.univ-lr.fr/twunet/web-app"> The Twunet developers </a>
+        -
+        <a href="https://git2017.univ-lr.fr/twunet/web-app/issues">Report a bug</a>
+    {% endblock %}
+</div>
+</body>
+</html>

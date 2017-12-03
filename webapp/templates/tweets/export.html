@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+            <h2>{{ _('Export Tweets/Fields in format') }}</h2>
+            <div class="radio">
+                <label><input type="radio" name="optradio">{{ _('In .txt') }}</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">{{ _('In .xml') }}</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">{{ _('In .json') }}</label>
+            </div>
+            <div class="btn-toolbar">
+                <a href="{{ url_for('tweets.tweets_list') }}">
+                    <button type="button" class="btn btn-danger">{{ _('Cancel') }}</button>
+                </a>
+                <a href="{{ url_for('users.users_list') }}">
+                    <button type="button" class="btn btn-success">{{ _('Confirm') }}</button>
+                </a>
+            </div>
+            <p></p>
+            <button type="button" class="btn btn-info disabled">{{ _('OR') }}</button>
+            <h2>{{ _('Export Tweets/Fields for :') }}</h2>
+            <div class="radio">
+                <label><input type="radio" name="optradio">{{ _('Iramuteq') }}</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">{{ _('Excel') }}</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">{{ _('Other') }}</label>
+            </div>
+            <div class="btn-toolbar">
+                <a href="{{ url_for('tweets.tweets_list') }}">
+                    <button type="button" class="btn btn-danger">{{ _('Cancel') }}</button>
+                </a>
+                <a href="{{ url_for('users.users_list') }}">
+                    <button type="button" class="btn btn-success">{{ _('Confirm') }}</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+            <h2>{{  _('Select the fields which are to be exported')}}</h2>
+            <div class="radio">
+                <label><input type="radio" name="optradio">{{ _('Tweets\' Text')}}</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">{{ _('Number of Retweets') }}</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">{{ _('Users') }}</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">{{ _('Coordinates') }}</label>
+            </div>
+            <div class="btn-toolbar">
+                <a href="{{ url_for('tweets.tweets_list') }}">
+                    <button type="button" class="btn btn-danger">{{ _('Cancel') }}</button>
+                </a>
+                <a href="{{ url_for('tweets.tweets_export') }}">
+                    <button type="button" class="btn btn-success">{{ _('Confirm') }}</button>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<div class="nav navbar-left navbar-nav">
+    <div class="collapse navbar-collapse">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle pull-right" type="button" data-toggle="dropdown">{{ _('Number of Users per page') }}
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href='{{ url_for('users.users_list', database_name = database_name, page=page, number =10) }}'>
+                        10</a>
+                </li>
+                <li>
+                    <a href='{{ url_for('users.users_list', database_name = database_name, page=page, number =20) }}'>
+                        20</a>
+                </li>
+                <li>
+                    <a href='{{ url_for('users.users_list', database_name = database_name, page=page, number =50) }}'>
+                        50</a>
+                </li>
+                <li>
+                    <a href='{{ url_for('users.users_list', database_name = database_name, page=page, number =100) }}'>
+                        100</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

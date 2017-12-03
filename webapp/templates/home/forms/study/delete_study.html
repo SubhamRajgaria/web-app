@@ -1,0 +1,24 @@
+<div class="modal fade modal" id="remove_study_modal_form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{ _('Delete the study %(name)s.', name=study.name) }}</h4>
+            </div>
+            <div class="modal-body">
+                <p>{{ _("Do you really want to remove the study <b>%(name)s</b> ? All save information will be lost",
+                        name=study.name) }}</p>
+                <form method=post>
+                    {{ render_hidden(delete_study_form.id, study.id) }}
+                    <div class="container-fluid">
+                        <div class="modal-footer">
+
+                            {{ render_submit(delete_study_form.delete, "btn btn-default btn-danger") }}
+                            <button type="button" class="btn btn-default btn-info"
+                                    data-dismiss="modal">{{ _('Cancel') }}</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
